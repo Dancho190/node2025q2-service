@@ -28,7 +28,7 @@ export class UserController {
   @HttpCode(HttpStatus.OK)
   updatePassword(@Param('id') id: string, @Body() dto: any) {
     if (!dto.oldPassword || !dto.newPassword) throw new BadRequestException('Old and new password required'); // BadReq fallback
-    return this.userService.updatePassword(id, dto.oldPassword, dto.newPassword);
+    return this.userService.updatePassword(id, dto.oldPassword, dto.newPassword); // Сервер не отвечает новым паролем
   }
    
   @Delete(":id") 
