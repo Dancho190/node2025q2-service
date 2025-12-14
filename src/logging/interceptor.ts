@@ -5,7 +5,7 @@ import { LoggingService } from '../logging/logging.service';
 export class HttpExceptionFilter implements ExceptionFilter {
   constructor(private loggingService: LoggingService) {}
 
-  catch(exception: unknown, host: ArgumentsHost) {
+  catch(exception: unknown, host: ArgumentsHost) { // перехватывает до и после ответы контроллера
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest();

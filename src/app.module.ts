@@ -11,12 +11,13 @@ import { ArtistService } from './services/artist.service';
 import { ArtistController } from './controllers/ArtistController';
 import { AuthService } from './services/auth.service';
 import { AuthController } from './controllers/AuthController';
+import { LoggingService } from './logging/logging.service';
 
 @Module({
   imports: [],
   // Контроллеры HTTP
   controllers: [AppController, TrackController, AlbumController, UserController, ArtistController, AuthController],
   // Весь функционал и логика
-  providers: [AppService, TrackService, AlbumService, UserService, ArtistService, AuthService ],
+  providers: [AppService, TrackService, AlbumService, UserService, ArtistService, AuthService, LoggingService ],
 })
 export class AppModule {}

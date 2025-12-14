@@ -2,7 +2,7 @@ import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from
 import { LoggingService } from '../logging/logging.service';
 
 @Catch()
-export class HttpExceptionFilter implements ExceptionFilter {
+export class HttpExceptionFilter implements ExceptionFilter { // фильтр обработки ошибок HTTP
   constructor(private loggingService: LoggingService) {}
 
   catch(exception: unknown, host: ArgumentsHost) {
