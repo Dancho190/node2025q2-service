@@ -55,8 +55,12 @@ export class UserService {
     const user = this.users.find((u) => u.id === id) // короче ищем юзера по его айдишнику
     if(!user) throw new NotFoundException()
     const { password, ...userWithoutPassword } = user;
-    return userWithoutPassword;
+    return userWithoutPassword
   }
+
+  findByLogin(login: string) { // метод для authservice
+  return this.users.find((u) => u.login === login) || null;
+}
 
   create(dto: Partial<User>) {
     const now = Date.now();
